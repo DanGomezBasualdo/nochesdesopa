@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Item } from '../item';
 import { InventoryService } from '../inventory.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-item-detail',
@@ -14,6 +15,7 @@ export class ItemDetailComponent implements OnInit {
   constructor(
     private inventoryService: InventoryService,
     private route: ActivatedRoute,
+    private location: Location,
   ) { }
 
   ngOnInit() {
@@ -24,6 +26,15 @@ export class ItemDetailComponent implements OnInit {
   getItem(id): void {
     this.inventoryService.getItem(id)
       .subscribe(item => this.item = item)
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
+
+  save(): void {
+   this.inventoryService.updateItem(this.item)
+     .subscribe(() => this.goBack());
   }
 
 }
