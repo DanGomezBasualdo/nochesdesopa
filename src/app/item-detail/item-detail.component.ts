@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Item } from '../item';
 import { InventoryService } from '../inventory.service';
 
@@ -10,14 +11,18 @@ import { InventoryService } from '../inventory.service';
 export class ItemDetailComponent implements OnInit {
   item: Item;
 
-  constructor(private inventoryService: InventoryService) { }
+  constructor(
+    private inventoryService: InventoryService,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
-    this.getItem();
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.getItem(id);
   }
 
-  getItem(): void {
-    this.inventoryService.getItem()
+  getItem(id): void {
+    this.inventoryService.getItem(id)
       .subscribe(item => this.item = item)
   }
 
