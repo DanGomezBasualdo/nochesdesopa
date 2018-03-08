@@ -1,0 +1,26 @@
+<div *ngIf="hero">
+  <!-- <h2>{{ hero.name | uppercase }} Details</h2> -->
+  <!-- <div><span>id: </span>{{hero.id}}</div> -->
+  <div>
+    <label>Nombre:
+      <input [(ngModel)]="hero.name" placeholder="Nombre">
+    </label>
+  </div>
+  <div>
+    <label>Ubicación:
+      <input [(ngModel)]="hero.location" placeholder="Ubicación">
+    </label>
+  </div>
+  <div>
+    <label>
+      Necesidades:
+    </label>
+      <ul>
+        <li *ngFor="let need of hero.needs">
+          {{need}}
+        </li>
+      </ul>
+  </div>
+</div>
+<button (click)="goBack()">Volver</button>
+<button (click)="save()">Guardar</button>

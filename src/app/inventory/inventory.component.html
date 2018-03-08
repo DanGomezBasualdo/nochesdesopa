@@ -1,0 +1,10 @@
+<h2>Inventario</h2>
+<ul class="heroes">
+  <li *ngFor="let item of items">
+    <span>{{item.name}}</span>
+    <span>{{item.size}}</span>
+    <span>{{item.quantity}}</span>
+    <span>{{item.maxStock}}</span>
+    <a routerLink="/item-detail/{{item.id}}">Editar</a>
+  </li>
+</ul>
