@@ -3,4 +3,5 @@ export class Item {
   name: string;
   size: string;
   quantity: number;
+  maxStock: number;
 }

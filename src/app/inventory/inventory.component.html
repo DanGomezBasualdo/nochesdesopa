@@ -1,10 +1,19 @@
 <h2>Inventario</h2>
-<ul class="heroes">
-  <li *ngFor="let item of items">
-    <span>{{item.name}}</span>
-    <span>{{item.size}}</span>
-    <span>{{item.quantity}}</span>
-    <span>{{item.maxStock}}</span>
-    <a routerLink="/item-detail/{{item.id}}">Editar</a>
-  </li>
-</ul>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Talle</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td><a routerLink="/item-detail/{{item.id}}">{{item.name}}</a></td>
+      <td>{{item.size}}</td>
+      <td [ngStyle]="{'color': item.quantity > item.maxStock ? 'red' : 'black'}">{{item.quantity}}</td>
+      <td>{{item.maxStock}}</td>
+    </tr>
+  </tbody>
+</table>
