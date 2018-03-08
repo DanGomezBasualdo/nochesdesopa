@@ -14,7 +14,7 @@ const httpOptions = {
 @Injectable()
 export class InventoryService {
 
-  private heroesUrl = 'api/heroes';  // URL to web api
+  private heroesUrl = 'api/items';  // URL to web api
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
     this.messageService.add('HeroService: ' + message);
@@ -23,6 +23,7 @@ export class InventoryService {
   getItems (): Observable<Item[]> {
     return this.http.get<Item[]>(this.heroesUrl)
     .pipe(
+      tap(_ => this.log(`Obtenido items`)),
       catchError(this.handleError('getItems', []))
     );
   }
