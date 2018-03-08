@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-
 import { HeroService }  from '../hero.service';
 import { Hero } from '../hero';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-hero-detail',
@@ -12,6 +12,7 @@ import { Hero } from '../hero';
 })
 export class HeroDetailComponent implements OnInit {
   @Input() hero: Hero;
+  newNeed: string;
 
   constructor(private route: ActivatedRoute,
               private heroService: HeroService,
@@ -35,6 +36,21 @@ export class HeroDetailComponent implements OnInit {
   save(): void {
    this.heroService.updateHero(this.hero)
      .subscribe(() => this.goBack());
+  }
+
+  addNeed(need): void {
+    this.hero.needs.push(need);
+    this.newNeed = '';
+  }
+
+  markedDelivered(need): void {
+    // TODO: should keep a record of all delivered
+    this.hero.needs = _.pull(this.hero.needs, need);
+  }
+
+  markedCanceled(need): void {
+    // TODO: should discard request without adding a record
+    this.hero.needs = _.pull(this.hero.needs, need);
   }
 
 }

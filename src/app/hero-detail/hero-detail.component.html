@@ -15,6 +15,12 @@
         <ul>
           <li *ngFor="let need of hero.needs">
             {{need}}
+            <a (click)="markedDelivered(need)">Y</a>
+            <a (click)="markedCanceled(need)">N</a>
+          </li>
+          <li>
+            <input type="text" name="addNeed" [(ngModel)]="newNeed">
+            <button class="btn btn-primary" (click)="addNeed(newNeed)">Agregar</button>
           </li>
         </ul>
     </div>
