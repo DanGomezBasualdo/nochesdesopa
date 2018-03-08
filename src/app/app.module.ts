@@ -15,6 +15,7 @@ import { InventoryService } from './inventory.service';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InventoryComponent } from './inventory/inventory.component';
+import { ItemDetailComponent } from './item-detail/item-detail.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { InventoryComponent } from './inventory/inventory.component';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    InventoryComponent
+    InventoryComponent,
+    ItemDetailComponent
   ],
   imports: [
     BrowserModule,
