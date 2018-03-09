@@ -1,3 +1,15 @@
-.right {
+.float-right {
   float: right;
+}
+
+.display-inlineblock {
+  display: inline-block;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mt-15 {
+  margin-top: 15px;
 }

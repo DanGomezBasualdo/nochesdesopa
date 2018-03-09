@@ -39,8 +39,12 @@ export class HeroDetailComponent implements OnInit {
   }
 
   addNeed(need): void {
-    this.hero.needs.push(need);
-    this.newNeed = '';
+    if (need && need !== '') {
+      this.hero.needs.push(need);
+      this.newNeed = '';
+    } else {
+      alert('no puede ser vacío!')
+    }
   }
 
   markedDelivered(need): void {

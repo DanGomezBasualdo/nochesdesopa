@@ -13,19 +13,25 @@
         Necesidades:
       </label>
         <ul>
-          <li *ngFor="let need of hero.needs">
-            {{need}}
-            <a (click)="markedDelivered(need)">Y</a>
-            <a (click)="markedCanceled(need)">N</a>
-          </li>
           <li>
-            <input type="text" name="addNeed" [(ngModel)]="newNeed">
-            <button class="btn btn-primary" (click)="addNeed(newNeed)">Agregar</button>
+            <div class="input-group">
+              <input class="form-control"type="text" name="addNeed" [(ngModel)]="newNeed">
+              <div class="input-group-append">
+                <button class="btn btn-primary" (click)="addNeed(newNeed)" type="button">Agregar</button>
+              </div>
+            </div>
+          </li>
+          <li *ngFor="let need of hero.needs" class="mt-15">
+              <span>{{need}}</span>
+              <div class="float-right display-inlineblock">
+              <button class="btn btn-success"(click)="markedDelivered(need)">Y</button>
+              <button class="btn btn-danger" (click)="markedCanceled(need)">N</button>
+            </div>
           </li>
         </ul>
     </div>
   </form>
-  <div class="right">
+  <div class="float-right">
     <button class="btn btn-secondary" (click)="goBack()">Volver</button>
     <button class="btn btn-primary" (click)="save()">Guardar</button>
   </div>
