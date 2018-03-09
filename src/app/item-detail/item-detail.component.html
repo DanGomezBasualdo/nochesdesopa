@@ -12,8 +12,13 @@
       <label for="cantidad">Cantidad</label>
       <input class="form-control" [(ngModel)]="item.quantity" name="Cantidad" placeholder="Cantidad">
     </div>
+    <div class="form-group">
+      <label for="maxStock">Stock Máximo</label>
+      <input class="form-control" [(ngModel)]="item.maxStock" name="maxStock" placeholder="Stock Máximo">
+    </div>
   </form>
   <div class="right">
+    <button class="btn btn-success" (click)="moveExcess()">Mover</button>
     <button class="btn btn-secondary" (click)="goBack()">Volver</button>
     <button class="btn btn-primary" (click)="save()">Guardar</button>
   </div>
