@@ -37,4 +37,13 @@ export class ItemDetailComponent implements OnInit {
      .subscribe(() => this.goBack());
   }
 
+  moveExcess(): void {
+    if (this.item.quantity > this.item.maxStock) {
+        const amountToSubstract = this.item.quantity - this.item.maxStock;
+        this.item.quantity -= amountToSubstract;
+        // TODO: addToNewStock(amountToSubstract) to increase the other stock.
+        alert('Se movieron ' + amountToSubstract + ' ' + this.item.name + ' al stock secundario');
+    }
+  }
+
 }
