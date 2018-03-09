@@ -1,3 +1,28 @@
-.right {
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.float-right {
   float: right;
+}
+
+.display-inlineblock {
+  display: inline-block;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
 }

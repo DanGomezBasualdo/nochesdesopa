@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { HeroService }  from '../hero.service';
 import { Hero } from '../hero';
-import * as _ from 'lodash';
+import { pull } from 'lodash';
 
 @Component({
   selector: 'app-hero-detail',
@@ -39,18 +39,22 @@ export class HeroDetailComponent implements OnInit {
   }
 
   addNeed(need): void {
-    this.hero.needs.push(need);
-    this.newNeed = '';
+    if (need && need !== '') {
+      this.hero.needs.push(need);
+      this.newNeed = '';
+    } else {
+      alert('no puede ser vacío!')
+    }
   }
 
   markedDelivered(need): void {
     // TODO: should keep a record of all delivered
-    this.hero.needs = _.pull(this.hero.needs, need);
+    this.hero.needs = pull(this.hero.needs, need);
   }
 
   markedCanceled(need): void {
     // TODO: should discard request without adding a record
-    this.hero.needs = _.pull(this.hero.needs, need);
+    this.hero.needs = pull(this.hero.needs, need);
   }
 
 }
