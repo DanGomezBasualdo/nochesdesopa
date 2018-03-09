@@ -12,7 +12,7 @@
       <label>
         Necesidades:
       </label>
-        <ul>
+        <ul class="mb-30">
           <li>
             <div class="input-group">
               <input class="form-control"type="text" name="addNeed" [(ngModel)]="newNeed">
@@ -21,17 +21,17 @@
               </div>
             </div>
           </li>
-          <li *ngFor="let need of hero.needs" class="mt-15">
+          <li *ngFor="let need of hero.needs" class="mt-30">
               <span>{{need}}</span>
               <div class="float-right display-inlineblock">
-              <button class="btn btn-success"(click)="markedDelivered(need)">Y</button>
+              <button class="btn btn-success mr-10"(click)="markedDelivered(need)">Y</button>
               <button class="btn btn-danger" (click)="markedCanceled(need)">N</button>
             </div>
           </li>
         </ul>
     </div>
   </form>
-  <div class="float-right">
+  <div class="float-right mt-15">
     <button class="btn btn-secondary" (click)="goBack()">Volver</button>
     <button class="btn btn-primary" (click)="save()">Guardar</button>
   </div>
