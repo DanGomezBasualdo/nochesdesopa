@@ -9,6 +9,7 @@ import { HeroService } from '../hero.service';
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
+  newHero: '';
 
   constructor(private heroService: HeroService) { }
 
@@ -28,6 +29,7 @@ export class HeroesComponent implements OnInit {
     .subscribe(hero => {
       this.heroes.push(hero);
     });
+  this.newHero = '';
   }
 
   delete(hero: Hero): void {

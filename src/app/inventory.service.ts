@@ -49,7 +49,7 @@ export class InventoryService {
 
   /** POST: add a new hero to the server */
   addItem (item: Item): Observable<Item> {
-    return this.http.post<Item>(this.heroesUrl, item, httpOptions).pipe(
+    return this.http.post<Item>('https://angryiglesia.herokuapp.com/items/addItem/1/xl/10/20/', item, httpOptions).pipe(
       tap((item: Item) => this.log(`Agregado w/ id=${item.id}`)),
       catchError(this.handleError<Item>('addItem'))
     );

@@ -14,6 +14,7 @@ export class HeroDetailComponent implements OnInit {
   @Input() hero: Hero;
   newNeed: string;
 
+
   constructor(private route: ActivatedRoute,
               private heroService: HeroService,
               private location: Location,
@@ -40,6 +41,9 @@ export class HeroDetailComponent implements OnInit {
 
   addNeed(need): void {
     if (need && need !== '') {
+      if (!this.hero.needs) {
+        this.hero.needs = [];
+      }
       this.hero.needs.push(need);
       this.newNeed = '';
     } else {
