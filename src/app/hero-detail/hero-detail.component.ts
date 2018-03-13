@@ -55,6 +55,7 @@ export class HeroDetailComponent implements OnInit {
   markedCanceled(need): void {
     // TODO: should discard request without adding a record
     this.hero.needs = pull(this.hero.needs, need);
+    // TODO: should re-add to inventory if not properly delivered
   }
 
 }
