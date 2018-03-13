@@ -1,4 +1,10 @@
 <h2>Amigos</h2>
+<div class="input-group">
+  <input class="form-control" type="text" name="addHero" [(ngModel)]="newHero">
+  <div class="input-group-append">
+    <button class="btn btn-primary" (click)="add(newHero)" type="button">Agregar</button>
+  </div>
+</div>
 <table class="table">
   <thead class="thead-light">
     <tr>
