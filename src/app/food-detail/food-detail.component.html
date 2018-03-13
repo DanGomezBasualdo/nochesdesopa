@@ -1,0 +1,25 @@
+<div *ngIf="food">
+  <form class="" action="index.html" method="post">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input class="form-control" [(ngModel)]="food.name" name="nombre" placeholder="Nombre">
+    </div>
+    <div class="form-group">
+      <label for="peso">Peso</label>
+      <input class="form-control" [(ngModel)]="food.weight" name="Peso" placeholder="Peso">
+    </div>
+    <div class="form-group">
+      <label for="cantidad">Cantidad</label>
+      <input class="form-control" [(ngModel)]="food.quantity" name="Cantidad" placeholder="Cantidad">
+    </div>
+    <div class="form-group">
+      <label for="maxStock">Stock Máximo</label>
+      <input class="form-control" [(ngModel)]="food.maxStock" name="maxStock" placeholder="Stock Máximo">
+    </div>
+  </form>
+  <div class="right">
+    <button class="btn btn-success" (click)="moveExcess()">Mover</button>
+    <button class="btn btn-secondary" (click)="goBack()">Volver</button>
+    <button class="btn btn-primary" (click)="save()">Guardar</button>
+  </div>
+</div>

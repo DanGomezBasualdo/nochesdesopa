@@ -26,7 +26,15 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 19, name: 'Pantalon', size: '42', quantity: 1, maxStock: 20 },
       { id: 20, name: 'Zapatillas', size: '36', quantity: 1, maxStock: 20 },
       { id: 21, name: 'Zapatillas', size: '40', quantity: 1, maxStock: 20 },
-    ]
-    return {heroes, items};
+    ];
+    const food = [
+      { id: 11, name: 'Tallarines', weight: '500g', quantity: 10, maxStock: 20 },
+      { id: 12, name: 'Mostacholes', weight: '500g', quantity: 11, maxStock: 20 },
+      { id: 13, name: 'Polenta', weight: '750g', quantity: 5, maxStock: 20 },
+      { id: 14, name: 'Arroz', weight: '1kg', quantity: 3, maxStock: 20 },
+      { id: 15, name: 'Salsa de tomate', weight: '500g', quantity: 1, maxStock: 20 },
+      { id: 16, name: 'Lentejas', weight: '500g', quantity: 1, maxStock: 20 },
+    ];
+    return {heroes, items, food};
   }
 }

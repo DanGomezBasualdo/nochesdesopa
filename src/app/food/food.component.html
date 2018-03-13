@@ -1,0 +1,19 @@
+<h2>Inventario de alimentos</h2>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Peso</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let food of foods">
+      <td><a routerLink="/food-detail/{{food.id}}">{{food.name}}</a></td>
+      <td>{{food.weight}}</td>
+      <td [ngStyle]="{'color': food.quantity > food.maxStock ? 'red' : 'black'}">{{food.quantity}}</td>
+      <td>{{food.maxStock}}</td>
+    </tr>
+  </tbody>
+</table>

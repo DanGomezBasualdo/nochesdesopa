@@ -14,7 +14,10 @@ import { InventoryService } from './inventory.service';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InventoryComponent } from './inventory/inventory.component';
+import { FoodComponent } from './food/food.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { FoodDetailComponent } from './food-detail/food-detail.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 @NgModule({
@@ -25,7 +28,9 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
     MessagesComponent,
     DashboardComponent,
     InventoryComponent,
-    ItemDetailComponent
+    FoodComponent,
+    ItemDetailComponent,
+    FoodDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +44,7 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
+    NgxChartsModule
   ],
   providers: [
     HeroService,
